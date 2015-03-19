@@ -25,7 +25,6 @@ public class VanilaThread extends Thread{
             }
         } 
         catch (InterruptedException ex) {
-            System.out.println("4546");
             Logger.getLogger(VanilaThread.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
