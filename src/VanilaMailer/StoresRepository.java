@@ -21,7 +21,9 @@ public class StoresRepository {
     
     public void setStoresList(String url){
         ArrayList<Store> stores = new ArrayList<Store>();
-        JSONArray storesArray = JsonData.getJsonArray(url);
+        JsonData newJson = new JsonData();
+        newJson.setJsonArray(url);
+        JSONArray storesArray = newJson.getJsonArray();
         JSONObject obj;
         try {
             for (int i = 0; i < storesArray.length(); i++) {    

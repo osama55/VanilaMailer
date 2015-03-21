@@ -25,6 +25,28 @@ import org.json.JSONException;
  */
 public class JsonData {
     
+    private JSONArray jsonArray;
+    
+    
+    public void setJsonArray(String url){
+        JSONArray json = null;
+        try {
+            InputStream is = null;
+            is = new URL(url).openStream();
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            String jsonText = readAll(rd);
+            json = new JSONArray(jsonText);
+        }
+        catch (IOException | JSONException ex) {
+            Logger.getLogger(JsonData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jsonArray = json;
+    }
+    
+    public JSONArray getJsonArray(){
+        return jsonArray;
+    }
+    
     private static String readAll(Reader rd)  {
         StringBuilder sb = new StringBuilder();
         try {
@@ -40,18 +62,4 @@ public class JsonData {
     }
     
     
-    public static JSONArray getJsonArray(String url){
-        JSONArray json = null;
-        try {
-            InputStream is = null;
-            is = new URL(url).openStream();
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-            String jsonText = readAll(rd);
-            json = new JSONArray(jsonText);
-        }
-        catch (IOException | JSONException ex) {
-            Logger.getLogger(JsonData.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return json;
-    }
 }

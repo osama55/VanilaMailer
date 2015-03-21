@@ -28,7 +28,9 @@ public class OffersRepository {
     public void setOffersList(String url){
         
         ArrayList<Offer> offers = new ArrayList<>();
-        JSONArray offersArray = JsonData.getJsonArray(url);
+        JsonData newJson = new JsonData();
+        newJson.setJsonArray(url);
+        JSONArray offersArray = newJson.getJsonArray();
         JSONObject obj;
         try{
             for (int i = 0; i < offersArray.length(); i++) {

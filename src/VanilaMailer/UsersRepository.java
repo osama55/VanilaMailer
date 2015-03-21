@@ -22,7 +22,9 @@ public class UsersRepository {
     
     public void setUsersList(String url){
         ArrayList<User> users = new ArrayList<>();
-        JSONArray usersArray = JsonData.getJsonArray(url);
+        JsonData newJson = new JsonData();
+        newJson.setJsonArray(url);
+        JSONArray usersArray = newJson.getJsonArray();
         JSONObject obj;
         try{
             for (int i = 0; i < usersArray.length(); i++) {

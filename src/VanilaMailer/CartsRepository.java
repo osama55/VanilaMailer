@@ -22,7 +22,9 @@ public class CartsRepository {
     
     public void setCartsList(String url){
         ArrayList<Cart> carts = new ArrayList<Cart>();
-        JSONArray cartsArray = JsonData.getJsonArray(url);
+        JsonData newJson = new JsonData();
+        newJson.setJsonArray(url);
+        JSONArray cartsArray = newJson.getJsonArray();
         JSONObject obj;
         try{
             for (int i = 0; i < cartsArray.length(); i++) {
