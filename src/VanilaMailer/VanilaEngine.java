@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Osama
  */
-public class Engine {
+public class VanilaEngine {
     
     String stores = "http://www.json-generator.com/api/json/get/ckDYrOagwO?indent=2";
     String users = "http://www.json-generator.com/api/json/get/bHWWIdNfqW?indent=2";
@@ -145,7 +145,7 @@ public class Engine {
                 }
             }
             catch (ParseException ex) {
-                Logger.getLogger(Engine.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(VanilaEngine.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

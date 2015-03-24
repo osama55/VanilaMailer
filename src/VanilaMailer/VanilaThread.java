@@ -16,7 +16,7 @@ public class VanilaThread extends Thread{
     @Override
     @SuppressWarnings("SleepWhileInLoop")
     public void run() {
-        Engine newEngine = new Engine();
+        VanilaEngine newEngine = new VanilaEngine();
         try {
             while(true){
                 newEngine.startEngine();
